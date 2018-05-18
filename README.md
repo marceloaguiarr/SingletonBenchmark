@@ -14,6 +14,7 @@ Tests setup:
  * OutputTimeUnit = TimeUnit.MICROSECONDS
  * Warmup iterations = 3
  * Measurement iterations = 3
+ * Threads per test = 1000
 
 ## Synchronized getInstance method
 
