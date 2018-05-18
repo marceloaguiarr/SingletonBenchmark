@@ -16,6 +16,9 @@ Tests setup:
  * Measurement iterations = 3
  * Threads per test = 1000
 
+Tests results:
+ * // TODO
+
 ## Synchronized getInstance method
 
 ```java
@@ -31,7 +34,7 @@ public class Synchronized {
     }
 }
 ```
-This approach uses the `synchronized` key word in the method signature to create or return a instance of the class
+This approach uses the `synchronized` key word in the method signature to create or return a instance of the class.
 That means every call to this method will be thread safe, and that is the problem.
 Every single call to this method will create a synchronization overhead, even if the instance is already created.
 Although this is a simple way to implement a threadsafe singleton, its not the most performatic.
@@ -66,7 +69,6 @@ public class LazyHolderIdiom {
     }
 }
 ```
-
 This uses the same optimizations and thread safety of the JVM class creation. It achieves lazy initialization of the instance
 with a inner class. Lazy initialization means that the instance of the class will only be created when the first call to the
 getInstance method is made. As it is a inner class creation it is guarantied to be thread safe and the subsequent calls are,
