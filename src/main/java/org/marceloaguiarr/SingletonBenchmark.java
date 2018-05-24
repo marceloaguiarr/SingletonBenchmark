@@ -7,11 +7,11 @@ import org.openjdk.jmh.annotations.*;
 
 import java.util.concurrent.TimeUnit;
 
-@Fork(2)
+@Fork(1)
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
 @Warmup(iterations = 3)
-@Measurement(iterations = 3)
+@Measurement(iterations = 10)
 public class SingletonBenchmark {
 
     @Benchmark
