@@ -9,15 +9,23 @@ performance of three idioms in a multithreaded environment. The idioms tested ar
 All benchmarks were made using [JHM Benchmark](http://openjdk.java.net/projects/code-tools/jmh/).
 
 Tests setup:
- * Fork = 2
+ * Fork = 1
  * BenchmarkMode = Mode.AverageTime
  * OutputTimeUnit = TimeUnit.MICROSECONDS
  * Warmup iterations = 3
- * Measurement iterations = 3
+ * Measurement iterations = 10
  * Threads per test = 1000
 
 Tests results:
- * // TODO
+
+|Benchmark                             |Mode | Cnt |  Score |   Error | Units
+| :-                                   | :-: | :-: |   :-:  |   :-:   | :-:   
+|SingletonBenchmark.EagerHolderBench   |avgt |  10 |  0.065 | ± 0.001 | us/op
+|SingletonBenchmark.LazyHolderBench    |avgt |  10 |  0.064 | ± 0.001 | us/op
+|SingletonBenchmark.SynchronizedBench  |avgt |  10 | 38.562 | ± 0.171 | us/op
+ 
+ * [Formated Log](formatedlog.md)
+ * [Raw log](rawlog.log)
 
 ## Synchronized getInstance method
 
