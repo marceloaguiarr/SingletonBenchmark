@@ -6,7 +6,7 @@
 
     <groupId>SingletonBenchmark</groupId>
     <artifactId>singleton-performance</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
 
     <name>Singleton Benchmark</name>
     <description>Simple benchmark for multiple singleton implementations</description>
@@ -14,6 +14,7 @@
         <developer>
             <id>marceloaguiarr</id>
             <name>Marcelo Aguiar Rodrigues</name>
+            <email>cabelo at gmail.com</email>
             <roles>
                 <role>Main Developer</role>
             </roles>
