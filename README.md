@@ -43,8 +43,7 @@ public class Synchronized {
 }
 ```
 This approach uses the `synchronized` key word in the method signature to create or return a instance of the class.
-That means every call to this method will be thread safe, and that is the problem.
-Every single call to this method will create a synchronization overhead, even if the instance is already created.
+That means every call to this method will be thread safe. The issue is that every single call to this method will create a synchronization overhead, even if the instance is already created.
 Although this is a simple way to implement a threadsafe singleton, its not the most performatic.
 
 ## Eager Initialization
@@ -60,7 +59,7 @@ public class EagerHolder {
 }
 ```
 Uses a static constant that hold the instance of the class.
-All class creations are thread safe in the JVM, that means the instance of will be created at the loading of the class.
+All class creations are thread safe in the JVM, that means the instance will be created at the loading of the class.
 That way all getInstance calls are as simple as a memory lookup, no synchronization envolved.
 
 ## Initialization-on-demand idiom
@@ -77,7 +76,4 @@ public class LazyHolderIdiom {
     }
 }
 ```
-This uses the same optimizations and thread safety of the JVM class creation. It achieves lazy initialization of the instance
-with a inner class. Lazy initialization means that the instance of the class will only be created when the first call to the
-getInstance method is made. As it is a inner class creation it is guarantied to be thread safe and the subsequent calls are,
-as in the EagerInitialization, a memory lookup with no synchronization overhead.
+This uses the same optimizations and thread safety of the JVM class creation as the Eager Initialization. It achieves lazy initialization of the instance with a inner class. Lazy initialization means that the instance of the class will only be created when the first call to the getInstance method is made. The inner class creation is guarantied to be thread safe by the JVM and the subsequent calls are, as in the EagerInitialization, a memory lookup with no synchronization overhead.
